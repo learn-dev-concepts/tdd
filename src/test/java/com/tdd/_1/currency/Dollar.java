@@ -6,12 +6,4 @@ public class Dollar extends Money {
         super(amount, currency);
     }
 
-    public Money times(int multiplier) {
-        return new Dollar(amount * multiplier, null);
-    }
-
-    public String currency() {
-        return currency;
-    }
-
 }

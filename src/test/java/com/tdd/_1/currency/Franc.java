@@ -7,11 +7,4 @@ public class Franc extends Money {
         super(amount, currency);
     }
 
-    public Money times(int multiplier) {
-        return Money.franc(this.amount * multiplier);
-    }
-
-    public String currency() {
-        return currency;
-    }
 }

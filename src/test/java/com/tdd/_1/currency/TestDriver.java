@@ -28,6 +28,7 @@ public class TestDriver {
         assertTrue(Money.franc(5).equals(Money.franc(5)));
         assertFalse(Money.franc(5).equals(Money.franc(10)));
         assertFalse(Money.dollar(5).equals(Money.franc(5)));
+        assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
     }
 
     @Test

@@ -1,6 +1,6 @@
 package com.tdd._1.currency;
 
-public abstract class Money {
+public class Money {
     protected int amount;
     protected String currency;
 
@@ -9,7 +9,9 @@ public abstract class Money {
         this.currency = currency;
     }
 
-    abstract Money times(int multiplier);
+    protected Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
+    }
 
     protected String currency() {
         return currency;
@@ -26,6 +28,11 @@ public abstract class Money {
     @Override
     public boolean equals(Object object) {
         Money money = (Money) object;
-        return amount == money.amount && this.getClass().equals(money.getClass());
+        return amount == money.amount && currency.equals(money.currency);
+    }
+
+    @Override
+    public String toString() {
+        return amount + "  " + currency;
     }
 }
