@@ -14,4 +14,9 @@ public class Sum implements Expression {
         return new Money(amount, to);
     }
 
+    @Override
+    public Money reduce(Bank bank, String to) {
+        int amount = augend.amount + addend.amount;
+        return new Money(amount, to);
+    }
 }
