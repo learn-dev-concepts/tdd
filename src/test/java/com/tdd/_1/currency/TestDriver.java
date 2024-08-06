@@ -7,6 +7,17 @@ import static org.junit.Assert.*;
 public class TestDriver {
 
     @Test
+    public void testMixedAddition() {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFranc = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money result = bank.reduce(
+                fiveBucks.plus(tenFranc), "USD");
+        assertEquals(Money.dollar(10), result);
+    }
+
+    @Test
     public void testMultiplication() {
         Money five = Money.dollar(5);
         assertEquals(Money.dollar(10), five.times(2));
